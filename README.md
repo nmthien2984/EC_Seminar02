@@ -1,8 +1,12 @@
-# Homework 1 - *Name of App*
+# Homework 2 - *Twitter Clone*
 
-**Name of your app** Trang web cho phép người dùng chia sẻ và cập nhật trạng thái. Due Date: 24:00 11/10/2016
+**Twitter Clone** Trang web cho phép người dùng chia sẻ và cập nhật trạng thái. Due Date: 24:00 11/10/2016
 
-Danh sách sinh viên: **Your Name Here**
+Danh sách sinh viên:
+
+1312458 - Ngô Đình Duy Quang
+
+1312551 - Nguyễn Minh Thiện
 
 URL: **Insert your Heroku URL here**
 
