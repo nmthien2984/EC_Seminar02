@@ -1,19 +1,18 @@
 <div class='row'>
-    <div class='col-xs-12'>
-        <div class='jumbotron'>
-            HEADER
-        </div>
-    </div>
-</div>
-<div class='row'>
     <div class='col-xs-3'>
         <div class='panel panel-default'>
             <div class='panel-body'>
-                <p>profile</p>
+                <p>stats</p>
+            </div>
+        </div>
+        <div class='panel panel-default'>
+            <div class='panel-body'>
+                <p>trends</p>
             </div>
         </div>
     </div>
     <div class='col-xs-6'>
+        <%= render '/components/post_form' %>
         <% for @p in @posts %>
         <div class='panel panel-default'>
             <div class='panel-body'>
@@ -25,16 +24,7 @@
     <div class='col-xs-3'>
         <div class='panel panel-default'>
             <div class='panel-body'>
-                <p>who to follow</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class='row'>
-    <div class='col-xs-3 col-xs-offset-9'>
-        <div class='panel panel-default'>
-            <div class='panel-body'>
-                <p>trends</p>
+                <p>about</p>
             </div>
         </div>
     </div>
