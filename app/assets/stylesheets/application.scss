@@ -20,7 +20,31 @@
 body {
     background-color: #f5f8fa;
 }
-
 .navbar {
     background-color: white;
+}
+.post-panel {
+    margin-top: -21px;
+}
+.post-title {
+    margin-left: 15px;
+}
+.post-owner {
+    text-align: left;
+    font-weight: bold;
+}
+.post-creation {
+    opacity: 0.65;
+}
+.post-content {
+    text-align: left;
+    margin-left: 15px;
+
+}
+.post-links {
+    text-align: center;
+}
+.add-post-btn {
+    margin-top: 5px;
+    float: right;
 }

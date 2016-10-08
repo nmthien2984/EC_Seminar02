@@ -1,6 +1,6 @@
-# Homework 2 - *Twitter Clone*
+# Homework 2 - *DuckJer*
 
-**Twitter Clone** Trang web cho phép người dùng chia sẻ và cập nhật trạng thái. Due Date: 24:00 11/10/2016
+**DuckJer** Trang web cho phép người dùng chia sẻ và cập nhật trạng thái. Due Date: 24:00 11/10/2016
 
 Danh sách sinh viên:
 
@@ -14,8 +14,8 @@ URL: **Insert your Heroku URL here**
 
 Danh sách chức năng **bắt buộc**:
 
-* [ ] Người dùng được phép đăng nhập bằng tên tài khoản, mật khẩu.
-* [ ] Người dùng có thể đăng trạng thái lên trang cá nhân.
+* [x] Người dùng được phép đăng nhập bằng tên tài khoản, mật khẩu.
+* [x] Người dùng có thể đăng trạng thái lên trang cá nhân.
 * [ ] Ở trang home, người dùng có thể xem trạng thái của bạn bè và những người đang được người đó follow. Cần thể hiện đầy đủ thông tin của trạng thái như hình ảnh, avatar,...
 * [ ] Người dùng có thể tìm kiếm người dùng khác
 * [ ] Người dùng có thể follow người dùng khác
