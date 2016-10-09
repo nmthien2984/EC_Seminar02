@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   def home
     @posts = Post.all
     @newPost = Post.new
+    @profile = 'user/' + current_user.username;
   end
 
   def profile
