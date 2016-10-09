@@ -22,4 +22,9 @@ class PagesController < ApplicationController
   def explore
     @posts = Post.all
   end
+
+  def search
+    @name = params[:name]
+    @users = User.all.where("username like ?", '%' + @name + '%')
+  end
 end
