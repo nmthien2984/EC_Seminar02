@@ -10,9 +10,7 @@
                     <p class='post-content'><%= @p.email %></p>
                 </div>
                 <div class='col-sm-12'>
-                    <p class='post-links'>
-                        <a href=''>View conversation</a>
-                    </p>
+                    <%= render '/components/follow_button', :user => User.find_by_username(params[:id]) %>
                 </div>            
             </div>
         </div>

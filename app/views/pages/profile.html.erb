@@ -27,4 +27,7 @@
         </div>
         <% end %>
     </div>
+    <div class='col-xs-3'>
+        <%= render '/components/follow_button', :user => User.find_by_username(params[:id]) %>
+    </div>
 </div>
