@@ -10,7 +10,7 @@
                     <p class='post-content'><%= @p.email %></p>
                 </div>
                 <div class='col-sm-12'>
-                    <%= render '/components/follow_button', :user => User.find_by_username(params[:id]) %>
+                    <%= render '/components/follow_button', :user => User.find_by_username(@p.username) %>
                 </div>            
             </div>
         </div>
