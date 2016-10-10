@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
+  get 'comments/create'
+
   devise_for :users
   resources :users do
     member do
       get :following, :followers
     end
   end
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   resources :relationships
   root 'pages#index'
 

@@ -19,7 +19,9 @@
                 </div>
             </div>
             <div class='col-sm-12'>
-                <%= render '/components/follow_button', :user => User.find_by_username(params[:id]) %>   
+                <% if params[:id] %>
+                    <%= render '/components/follow_button', :user => User.find_by_username(params[:id]) %>
+                <% end %>
             </div>
         </div>
     </div>
