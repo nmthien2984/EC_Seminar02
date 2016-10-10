@@ -9,8 +9,10 @@
                             <%= f.text_field :content, autofocus: true, class: 'form-control' %>                           
                         </div>
                         <div class="add-post-btn">
+                            <span class='characters-left'>140</span>
                             <%= f.submit "Add Post", class: 'btn btn-primary' %>
                         </div>
+                        <%= hidden_field_tag(:url, request.original_url) %>
                     <% end %>
                 </div>          
             </div>

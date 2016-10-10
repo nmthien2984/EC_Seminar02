@@ -2,11 +2,10 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
-    byebug
     @comment.user_id = params[:user_id]
     @comment.save
 
-    redirect_to ''
+    f.html { redirect_to params[:url] }
   end
 
   private

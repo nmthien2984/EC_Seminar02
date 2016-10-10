@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   end
 
   def home
-    @posts = Post.all.select { |post| current_user.following?(User.find(post.user_id))}
+    @posts = Post.order(:created_at).select { |post| current_user.following?(User.find(post.user_id)) || post.user_id == current_user.id}
     @newPost = Post.new
     @profile = 'user/' + current_user.username;
   end
