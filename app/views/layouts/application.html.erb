@@ -29,13 +29,13 @@
               </div>
               <div class='col-sm-6'>
                 <div class='col-sm-2 stat-title'>POSTS<br>
-                  <h6 class='stat-value'>16</h6>
+                  <h6 class='stat-value'><%= current_user.posts.count %></h6>
                 </div>
                 <div class='col-sm-2 stat-title'>FOLLOWING<br>
-                  <h6 class='stat-value'>16</h6>
+                  <h6 class='stat-value'><%= current_user.following.count %></h6>
                 </div>
                 <div class='col-sm-2 stat-title'>FOLLOWERS<br>
-                  <h6 class='stat-value'>16</h6>
+                  <h6 class='stat-value'><%= current_user.followers.count %></h6>
                 </div>
               </div>
             </div>

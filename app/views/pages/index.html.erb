@@ -1,7 +1,6 @@
 <% if !user_signed_in? %>
 
     <style>
-
         body {
             background: url('/landing.jpg') no-repeat center fixed;
             -webkit-background-size: cover;
@@ -9,38 +8,67 @@
             -o-background-size: cover;
             background-size: cover;
         }
-
         h1 {
             font-weight: bold;
         }
-
+        hr {
+            margin-top: 0px;
+            margin-borrom: 0px;
+        }
         .container-index {
-            margin-right: 15%;
-            margin-left: 15%;
+            margin-right: 10%;
+            margin-left: 10%;
             color: white;
         }
-
         .text {
             font-weight: 400;
-            font-size: 150%;
+            font-size: 160%;
             margin-top: 30px;
         }
-
         .log-in {
-            width: 300px;
-            height: 150px;
+            width: 350px;
+            height: 120px;
             margin-top: 10%;
         }
-
         .sign-up {
-            width: 300px;
-            height: 250px
+            width: 350px;
+            height: 250px;
+            color: black;
+        }
+        .sign-up-header {
+            color: black;
+            padding-left: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 130%;
+        }
+        .long-field {
+            width: 330px;
+            margin-left: 10px;
+            margin-top:10px;
+        }
+        .short-field {
+            width: 250px;
+            margin-left: 10px;
+            margin-top:10px;
+            margin-right: 10px;
+        }
+        .remember-me {
+            margin-left: 10px;
+            color: grey;
+        }
+        .inline {
+            display: inline;
+        }
+        .btn-sign-up {
+            margin-top: 10px;
+            margin-left: 10px;
         }
 
     </style>
 
     <div class='container-index row'>
-        <div class='col-md-8'>
+        <div class='col-md-7'>
             <h1>Welcome to Duckjer.</h1>
             <p class='text'>
                 Connect with your friends — and other fascinating<br> people. 
@@ -48,12 +76,47 @@
                 And watch events unfold, in real<br> time, from every angle.
             </p>
         </div>
-        <div class='col-md-4'>
+        <div class='col-md-5'>
             <div class='log-in panel'>
-                Login
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <div class="field">
+                    <%= f.email_field :email, class: 'form-control long-field', placeholder: 'Email' %>
+                </div>
+
+                <div class="field">
+                    <span><%= f.password_field :password, autocomplete: "off", class: 'form-control short-field inline', placeholder: 'Password' %></span>
+                    <span><%= f.submit "Log in", class: 'btn btn-primary' %></span>
+                </div>
+
+                <% if devise_mapping.rememberable? -%>
+                    <div class="field remember-me">
+                        <%= f.check_box :remember_me %>
+                        <%= f.label :remember_me, 'Remember me' %> - 
+                        <%= link_to "Forgot password?", new_password_path(resource_name) %><br />
+                    </div>
+                <% end -%>
+                <% end %>              
             </div>
             <div class='sign-up panel'>
-                Signup
+                <div class='sign-up-header'>
+                    New to DuckJer? Sign up
+                </div>
+                <hr>
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= devise_error_messages! %>
+                <div class="field">
+                    <%= f.email_field :email, class: 'form-control long-field', placeholder: 'Email' %>
+                </div>
+                <div class="field">
+                    <%= f.text_field :username, class: 'form-control long-field', placeholder: 'Username' %>
+                </div>
+                <div class="field">
+                    <%= f.password_field :password, autocomplete: "off", class: 'form-control long-field', placeholder: 'Password' %>
+                </div>
+                <div class="actions">
+                    <%= f.submit "Sign up for DuckJer", class: 'btn btn-warning btn-sign-up' %>
+                </div>
+                <% end %>
             </div>
         </div>   
     </div>

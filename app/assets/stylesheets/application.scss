@@ -39,7 +39,6 @@ body {
 .post-content {
     text-align: left;
     margin-left: 15px;
-
 }
 .post-links {
     text-align: center;
@@ -47,6 +46,12 @@ body {
 .add-post-btn {
     margin-top: 5px;
     float: right;
+}
+.characters-left {
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 120%;
+    opacity: 0.5;
 }
 .stat-title {
     font-size:80%;
@@ -71,4 +76,8 @@ body {
     margin-top: -20px;
     margin-bottom: 0px;
     padding-top: 5px;
+}
+.user-panel {
+    margin-top: -21px;
+    width: 60%;
 }

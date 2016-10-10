@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   end
 
   def home
-    @posts = Post.all
+    @posts = Post.all.select { |post| current_user.following?(User.find(post.user_id))}
     @newPost = Post.new
     @profile = 'user/' + current_user.username;
   end
@@ -17,10 +17,6 @@ class PagesController < ApplicationController
 
     @posts = Post.all.where("user_id = ?", User.find_by_username(params[:id]).id)
     @newPost = Post.new
-  end
-
-  def explore
-    @posts = Post.all
   end
 
   def search
