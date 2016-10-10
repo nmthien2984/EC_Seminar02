@@ -51,8 +51,8 @@
         <div class="field form-group">
             <%= f.text_area :content, class: 'form-control' %>
         </div>
-        <%= f.hidden_field_tag(:user_id, current_user.id) %>
-        <%= f.hidden_field_tag(:url, request.original_url) %>    
+        <%= hidden_field_tag(:user_id, current_user.id) %>
+        <%= hidden_field_tag(:url, request.original_url) %>    
         <%= f.submit "Submit", class: 'btn btn-success margin-bottom-10' %>   
         <% end %>
 

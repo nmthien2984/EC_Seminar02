@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     @comment.user_id = params[:user_id]
     @comment.save
 
-    f.html { redirect_to params[:url] }
+     redirect_to params[:url]
   end
 
   private
