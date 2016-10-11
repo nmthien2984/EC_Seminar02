@@ -22,7 +22,7 @@ Danh sách chức năng **bắt buộc**:
 * [x] Người dùng có thể thêm comment vào các bài đăng.
 * [ ] Người dùng có thể đăng nhập bằng Twitter qua OAuth(Sử dụng Omniauth Twitter)
 * [ ] Sử dụng Twitter API để cho phép tạo tweet lên Twitter của người dùng khi đăng trạng thái thành công (Sử dụng [Twitter Gem](https://github.com/sferik/twitter) và [đăng ký Application Token](https://apps.twitter.com))
-* [ ] Cần thể hiện số ký tự còn lại khi gõ (Twitter cho phép gõ trạng thái tối đa 140 ký tự)
+* [x] Cần thể hiện số ký tự còn lại khi gõ (Twitter cho phép gõ trạng thái tối đa 140 ký tự)
 * [ ] Cần thực hiện AJAX và javascript để hạn chế nạp lại trang.
 * [ ] Cho phép tải danh sách các tweet vào trang chủ của người dùng
 * [ ] Cần quản lý API Key bằng biến môi trường (Sử dụng [dotenv gem](https://github.com/bkeepers/dotenv))
@@ -40,10 +40,10 @@ Danh sách chức năng **phụ**:
 * [ ] Cần tạo các test với capybara và rspec để test chức năng của ứng dụng
 
 Danh sách chức năng **thêm** đã làm nhưng chưa được liệt kê ở trên:
-* [x] Hiển thị số post, số followers và following
+* [x] Hiển thị số posts, số followers và following
 
 Quy trình sử dụng [GIT Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/)
-* [ ] Git với Centralize Workflow (chỉ có duy nhất nhánh master)
+* [x] Git với Centralize Workflow (chỉ có duy nhất nhánh master)
 * [ ] Git theo Feature Branch Workflow (mỗi chức năng sẽ được làm trên 1 nhánh riêng)
 * [ ] Git theo Gitflow Workflow (Có các nhánh develop, master, test,...)
 * [ ] Có sử dụng tag, pull requests
@@ -62,7 +62,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2016] [name of copyright owner]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
