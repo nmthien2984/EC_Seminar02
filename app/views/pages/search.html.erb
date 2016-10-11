@@ -5,8 +5,10 @@
                 <div class='col-sm-2'>
                     <img src='/avatar.png' height='50px' width='50px'></img>
                 </div>
-                <div class='col-sm-6'>
-                    <p class='post-title post-owner'><%= @p.username %></p>
+                    <div class='col-sm-6'>
+                        <h4 style='font-weight: bold'>
+                        <%= link_to @p.username, "/user/" + @p.username, style:'color:black' %>
+                    </h4>
                     <p class='post-content'><%= @p.email %></p>                   
                 </div>
                 <div class='col-sm-4'>
