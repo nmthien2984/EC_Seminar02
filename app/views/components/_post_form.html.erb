@@ -6,10 +6,10 @@
                 <div class='col-sm-11' style='padding-left:30px'>
                     <%= form_for(@newPost) do |f| %>
                         <div class="field">
-                            <%= f.text_field :content, autofocus: true, class: 'form-control' %>                           
+                            <%= f.text_area :content, class: 'form-control', id: 'post_content' %>                           
                         </div>
                         <div class="add-post-btn">
-                            <span class='characters-left'>140</span>
+                            <span class='characters-left' id='post_content_char_left'>140</span>
                             <%= f.submit "Add Post", class: 'btn btn-primary' %>
                         </div>
                         <%= hidden_field_tag(:url, request.original_url) %>

@@ -16,7 +16,7 @@
             <div style='height:21px;'></div>
         <% end %>
         <% for @p in @posts %>
-        <div class='panel panel-default post-panel'>
+        <div class='panel panel-default post-panel' id='post_<%= @p.id %>'>
             <div class='panel-body row'>
                 <div class='col-sm-1'>
                     <img src='/avatar.png' height='50px' width='50px'></img>
@@ -27,35 +27,35 @@
                 </div>
                 <div class='col-sm-12'>
                     <p class='post-links'>
-                        <a href=''>View conversation</a>
+                        <a href='javascript:void(0)' id='link_comments_<%= @p.id %>' onclick='toggleComments(<%= @p.id %>)'>View conversation</a>
                     </p>
                 </div>            
             </div>
-        </div>
-
-        <% @p.comments.each do |comment| %>
-        <div class= 'panel panel-default comment-panel'>
-            <div class='panel-body row'>
-                <div class='col-sm-1'>
-                    <img src='/avatar.png' height='50px' width='50px'></img>
+        </div> 
+        <div id='comments_<%= @p.id %>' style='display:none'>
+            <% @p.comments.each do |comment| %>
+            <div class= 'panel panel-default comment-panel'>
+                <div class='panel-body row'>
+                    <div class='col-sm-1'>
+                        <img src='/avatar.png' height='50px' width='50px'></img>
+                    </div>
+                    <div class='col-sm-11'>
+                        <p class='post-title'><span class='post-owner'><%= User.find(comment.user_id).username %></span><span class='post-creation'> - <%= comment.created_at.to_formatted_s(:short) %></span></p>
+                        <p class='post-content'><%= comment.content %></p>
+                    </div>                 
                 </div>
-                <div class='col-sm-11'>
-                    <p class='post-title'><span class='post-owner'><%= User.find(comment.user_id).username %></span><span class='post-creation'> - <%= comment.created_at.to_formatted_s(:short) %></span></p>
-                    <p class='post-content'><%= comment.content %></p>
-                </div>                 
             </div>
-        </div>
-        <% end %>
+            <% end %>
 
-        <%= form_for([@p, @p.comments.build], :html => { :class => 'panel panel-default new-comment-panel'})  do |f| %>
-        <div class="field form-group">
-            <%= f.text_area :content, class: 'form-control' %>
+            <%= form_for([@p, @p.comments.build], :html => { :class => 'panel panel-default new-comment-panel'})  do |f| %>
+            <div class="field form-group">
+                <%= f.text_area :content, class: 'form-control' %>
+            </div>
+            <%= hidden_field_tag(:user_id, current_user.id) %>
+            <%= hidden_field_tag(:url, request.original_url + '#post_' + @p.id.to_s) %>    
+            <%= f.submit "Submit", class: 'btn btn-success margin-bottom-10' %>   
+            <% end %>
         </div>
-        <%= hidden_field_tag(:user_id, current_user.id) %>
-        <%= hidden_field_tag(:url, request.original_url) %>    
-        <%= f.submit "Submit", class: 'btn btn-success margin-bottom-10' %>   
-        <% end %>
-
-        <% end %>
+        <% end %>     
     </div>
 </div>
